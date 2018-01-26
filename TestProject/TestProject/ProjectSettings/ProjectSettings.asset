@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
-  productGUID: 14270dc8305512c4fa02c6b7c1356544
+  productGUID: 4160b03e8da8366499c20dfb6bd01861
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Lazer
+  productName: TestProject
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -558,14 +558,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Lazer
+  metroPackageName: TestProject
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Lazer
+  metroApplicationDescription: TestProject
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -634,8 +634,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 395ba3d7-e42e-4759-9769-c80560b5ad0f
-  projectName: Lazer
+  cloudProjectId: 7952679d-df2b-43dc-ad31-4ef9096981b7
+  projectName: TestProject
   organizationId: ryanvandusen
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
