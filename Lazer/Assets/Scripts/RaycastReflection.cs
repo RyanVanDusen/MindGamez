@@ -60,8 +60,8 @@ public class RaycastReflection : MonoBehaviour
   
         for(int i=0;i<=nReflections;i++)
         {
-            volumetricLines.UpdateLineVertices(volumetricLines.m_lineVertices);
-            volumetricLines.m_lineVertices[i] = lineRenderer.GetPosition(i);
+        //    volumetricLines.UpdateLineVertices(volumetricLines.m_lineVertices);
+       //    volumetricLines.m_lineVertices[i] = lineRenderer.GetPosition(i);
             //If the ray hasn't reflected yet  
             if (i==0)  
             {  
