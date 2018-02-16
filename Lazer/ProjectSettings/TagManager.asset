@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Reflector Cube
+  - FuelPickUp
+  - HealthPickUp
   layers:
   - Default
   - TransparentFX
