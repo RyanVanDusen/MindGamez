@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
   
 [RequireComponent (typeof (LineRenderer))]  
   
 public class RaycastReflection : MonoBehaviour  
 {
+    #region Variables
     private LineRenderer lineRenderer;
 
     private Ray ray;
@@ -18,17 +20,19 @@ public class RaycastReflection : MonoBehaviour
     //Points on the Line Renderer
     private int nPoints;
 
-    //Volumetric Variables
-    private VolumetricLines.VolumetricMultiLineBehavior volumetricLines;
-    public Vector3 points;
-
     //Scripts
     PlayerHealth playerHealth;
-  
+
+    [SerializeField]
+    private float burnTime;
+
+    public Material burnt;
+    #endregion
+
+    #region Functions
     void Awake ()  
     {
         lineRenderer = GetComponent<LineRenderer>();
-        volumetricLines = gameObject.GetComponent<VolumetricLines.VolumetricMultiLineBehavior>();
     }  
   
     void Update ()  
@@ -53,8 +57,6 @@ public class RaycastReflection : MonoBehaviour
   
         for(int i=0;i<=nReflections;i++)
         {
-            volumetricLines.UpdateLineVertices(volumetricLines.m_lineVertices);
-            volumetricLines.m_lineVertices[i] = lineRenderer.GetPosition(i);
             //If the Ray has not been Reflected yet 
             if (i==0)  
             {  
@@ -111,12 +113,24 @@ public class RaycastReflection : MonoBehaviour
                     //Checks to see if the Laser hits the Player
                     if (hit.transform.CompareTag("Player"))
                     {
-                        hit.transform.position = hit.transform.gameObject.GetComponent<PlayerHealth>().SpawnPoint.position;
-                        hit.transform.gameObject.GetComponent<PlayerHealth>().Health--;
-                        print("hit");
+                        hit.transform.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+                    }
+
+                    if (hit.transform.gameObject.tag == "Destructible")
+                    {
+                        StartCoroutine(BurnObject(hit.transform.gameObject));
                     }
                 }
             }  
         }
     }  
+
+    IEnumerator BurnObject(GameObject go)
+    {
+        yield return new WaitForSeconds(burnTime);
+        go.GetComponent<Renderer>().material = burnt;
+        yield return new WaitForSeconds(burnTime);
+        Destroy(go);
+    }
+    #endregion
 }  

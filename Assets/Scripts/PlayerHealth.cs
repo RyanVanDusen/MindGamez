@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
-    private int health;
+    private float health;
 
     [SerializeField]
     private Transform spawnPoint;
 
-    //Accessors
-    public int Health
+    [SerializeField]
+    private bool canHurt;
+    #endregion
+
+    #region Accessors
+    public float Health
     {
         get
         {
@@ -27,8 +33,22 @@ public class PlayerHealth : MonoBehaviour
         {
             return spawnPoint;
         }
+        set
+        {
+            spawnPoint = value;
+        }
     }
 
+    public bool CanHurt
+    {
+        get
+        {
+            return canHurt;
+        }
+    }
+    #endregion
+
+    #region Functions
     private void Start()
     {
         //Sets the Player position to the Spawn Point at the start of the Game
@@ -44,4 +64,22 @@ public class PlayerHealth : MonoBehaviour
             Application.Quit();
         }
     }
+
+    public void TakeDamage()
+    {
+        canHurt = false;
+        transform.position = spawnPoint.position;
+        health--;
+
+        StartCoroutine(Wait());
+
+        Debug.Log("HEALTH: " + health);
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.2f);
+        canHurt = true;
+    }
+    #endregion
 }
