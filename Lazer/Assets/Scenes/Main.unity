@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 1075717735}
   - component: {fileID: 1075717734}
   m_Layer: 0
-  m_Name: Reflector Cube
+  m_Name: ReflectorCube
   m_TagString: Reflector Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
