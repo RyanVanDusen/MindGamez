@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[RequireComponent(typeof(AudioSource))]
 public class TurretAI : MonoBehaviour {
     //**inspector variables
     [SerializeField]
@@ -24,6 +25,9 @@ public class TurretAI : MonoBehaviour {
     Vector3 lastPos = Vector3.zero;
     Quaternion lookAt;
     float lastRot;
+    Transform leftCensor;
+    Transform rightCensor;
+
 
     [System.Serializable]
     public class Controls
@@ -33,19 +37,19 @@ public class TurretAI : MonoBehaviour {
         [Tooltip("The delay between rotations")]
         public float delay = .5f;
         [Range(0,360)]
-        public float clamp;
-        [Range(0, 1f)]
-        public float fieldOfView;
+        public float clamp = 50f;
     }
     [System.Serializable]
     public class Weapons
     {
         [Range(0, 2f)]
         public float fireRate;
-        public float range;
+        public float range = 20f;
+        [Range(.01f, .5f)]
+        public float fieldOfView =.1f;
         public int damage = 1;
-        [Range(0, 5f)]
-        public float accuracy;
+        [Range(0f, 5f)]
+        public float accuracy = .5f;
         public enum WeaponType{ Normal, ThreeRoundBurst, ShotgunBlast};
         public WeaponType weaponType;
     }
@@ -56,6 +60,25 @@ public class TurretAI : MonoBehaviour {
         min = curValue - controls.clamp;
         max = curValue + controls.clamp;
         ai = AI.Targeting;
+        leftCensor = transform.Find("Censors/LeftCensor");
+        rightCensor = transform.Find("Censors/RightCensor");
+    }
+
+    void FixedUpdate()
+    {
+        RaycastHit leftHit;
+        RaycastHit rightHit;
+        leftCensor.localPosition = new Vector3(+weapons.fieldOfView,0,leftCensor.localPosition.z);
+        rightCensor.localPosition = new Vector3(-weapons.fieldOfView, 0, rightCensor.localPosition.z);
+        leftCensor.localRotation = Quaternion.Euler(0,-weapons.fieldOfView*100, 0);
+        rightCensor.localRotation = Quaternion.Euler(0, +weapons.fieldOfView * 100, 0);
+
+        if (Physics.Raycast(leftCensor.position, leftCensor.forward * weapons.fieldOfView, out leftHit, weapons.range)||
+            Physics.Raycast(rightCensor.position, rightCensor.forward * -weapons.fieldOfView, out rightHit, weapons.range))
+        {
+            Debug.DrawLine(rightCensor.position, leftCensor.forward * weapons.range, Color.green);
+            Debug.DrawLine(leftCensor.position, rightCensor.forward * weapons.range, Color.green);
+        }
     }
 
 
@@ -88,9 +111,9 @@ public class TurretAI : MonoBehaviour {
         if (transform.rotation != lookAt)
         {
             if (lastRot - transform.rotation.y > 0)
-                curValue -= Time.deltaTime * controls.seekingSpeed;
+                curValue -= 1f;
             else if (lastRot - transform.rotation.y < 0)
-                curValue += Time.deltaTime * controls.seekingSpeed;
+                curValue += 1f;
             lastRot = transform.rotation.y;
 
             if (curValue >= max || curValue <= min)
