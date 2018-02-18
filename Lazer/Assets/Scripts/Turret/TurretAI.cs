@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AISeek))]
+[RequireComponent(typeof(AITarget))]
 public class TurretAI : MonoBehaviour {
     //**inspector variables
-    [SerializeField]
-    Transform target;
+    public Transform target;
     [Space(1)]
     [Header("Turret Controls")]
     public Controls controls;
@@ -15,19 +15,22 @@ public class TurretAI : MonoBehaviour {
     public Weapons weapons;
 
     //private variables
-    float curValue;
-    float min;
-    float max;
-    bool turningRight = true;
-    bool isDelaying;
-    enum AI {Seeking, Targeting, Disabled }
-    AI ai;
-    Vector3 lastPos = Vector3.zero;
-    Quaternion lookAt;
-    float lastRot;
+    [HideInInspector]
+    public float curValue;
+    [HideInInspector]
+    public float min { get; private set; }
+    [HideInInspector]
+    public float max { get; private set; }
+    [HideInInspector]
+    public enum AI {Seeking, Targeting, Disabled }
+    [HideInInspector]
+    public AI ai;
     Transform leftCensor;
     Transform rightCensor;
 
+    //AI components
+    AISeek aiSeek;
+    AITarget aiTarget;
 
     [System.Serializable]
     public class Controls
@@ -62,6 +65,8 @@ public class TurretAI : MonoBehaviour {
         ai = AI.Targeting;
         leftCensor = transform.Find("Censors/LeftCensor");
         rightCensor = transform.Find("Censors/RightCensor");
+        aiSeek = gameObject.GetComponent<AISeek>();
+        aiTarget = gameObject.GetComponent<AITarget>();
     }
 
     void FixedUpdate()
@@ -91,63 +96,17 @@ public class TurretAI : MonoBehaviour {
             default:
                 break;
             case AI.Seeking:
-                Seeking();
+                aiSeek.Seeking();
                 break;
             case AI.Targeting:
                 if (!target)
                     goto case AI.Seeking;
-                Targeting();
+                aiTarget.Targeting();
                 break;
         }
         #endregion
     }
-    public void Targeting()
-    {
-        if (lastPos != target.position)
-        {
-            lastPos = target.position;
-            lookAt = Quaternion.LookRotation(lastPos - transform.position);
-        }
-        if (transform.rotation != lookAt)
-        {
-            if (lastRot - transform.rotation.y > 0)
-                curValue -= 1f;
-            else if (lastRot - transform.rotation.y < 0)
-                curValue += 1f;
-            lastRot = transform.rotation.y;
-
-            if (curValue >= max || curValue <= min)
-            {
-                if (curValue >= max)
-                    curValue = max;
-                else if (curValue <= min)
-                    curValue = min;
-                turningRight = !turningRight;
-                ai = AI.Seeking;
-            }
-            else
-               transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
-            print("Fire!");
-        }
-    }
-
-    public void Seeking()
-    {
-        if (isDelaying)
-            return;
-        curValue += turningRight ? +controls.seekingSpeed * Time.deltaTime : -controls.seekingSpeed * Time.deltaTime;
-        transform.localRotation = Quaternion.Euler(0, curValue, 0);
-
-        if (curValue >= max || curValue <= min)
-        {
-            if (curValue >= max)
-                curValue = max;
-            else if (curValue <= min)
-                curValue = min;
-            turningRight = !turningRight;
-            StartCoroutine(Delay());
-        }
-    }
+   
 
     bool Target(Transform _target)
     {
@@ -155,12 +114,5 @@ public class TurretAI : MonoBehaviour {
             return false;
         target = _target;
         return true;
-    }
-
-    IEnumerator Delay()
-    {
-        isDelaying = true;
-        yield return new WaitForSeconds(controls.delay);
-        isDelaying = false;
     }
 }
