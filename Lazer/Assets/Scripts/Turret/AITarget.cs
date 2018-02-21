@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AITarget : MonoBehaviour {
-    public TurretAI ai;
+    TurretAI ai;
     Vector3 lastPos = Vector3.zero;
     Quaternion lookAt;
     float lastRot;
@@ -34,12 +34,11 @@ public class AITarget : MonoBehaviour {
                     ai.curValue = ai.max;
                 else if (ai.curValue <= ai.min)
                     ai.curValue = ai.min;
-                // turningRight = !turningRight;
                 ai.ai = TurretAI.AI.Seeking;
             }
             else
                 transform.LookAt(new Vector3(ai.target.position.x, transform.position.y, ai.target.position.z));
-            print("Fire!");
+            //print("Fire!");
         }
     }
 }

@@ -73,17 +73,32 @@ public class TurretAI : MonoBehaviour {
     {
         RaycastHit leftHit;
         RaycastHit rightHit;
-        leftCensor.localPosition = new Vector3(+weapons.fieldOfView,0,leftCensor.localPosition.z);
+        leftCensor.localPosition = new Vector3(+weapons.fieldOfView, 0, leftCensor.localPosition.z);
         rightCensor.localPosition = new Vector3(-weapons.fieldOfView, 0, rightCensor.localPosition.z);
-        leftCensor.localRotation = Quaternion.Euler(0,-weapons.fieldOfView*100, 0);
+        leftCensor.localRotation = Quaternion.Euler(0, -weapons.fieldOfView * 100, 0);
         rightCensor.localRotation = Quaternion.Euler(0, +weapons.fieldOfView * 100, 0);
+        if (Physics.Raycast(leftCensor.position, leftCensor.forward * weapons.fieldOfView, out leftHit, weapons.range))
+        {
+            if (ai == AI.Seeking && (leftHit.transform.gameObject.tag == "Player"))
+                ai = AI.Targeting;
+        }
+        else if (Physics.Raycast(rightCensor.position, rightCensor.forward * -weapons.fieldOfView, out rightHit, weapons.range))
+        {
+            if (ai == AI.Seeking && (rightHit.transform.gameObject.tag == "Player"))
+                ai = AI.Targeting;
+        }
 
-        if (Physics.Raycast(leftCensor.position, leftCensor.forward * weapons.fieldOfView, out leftHit, weapons.range)||
-            Physics.Raycast(rightCensor.position, rightCensor.forward * -weapons.fieldOfView, out rightHit, weapons.range))
+        if (ai == AI.Seeking)
         {
             Debug.DrawLine(rightCensor.position, leftCensor.forward * weapons.range, Color.green);
             Debug.DrawLine(leftCensor.position, rightCensor.forward * weapons.range, Color.green);
         }
+        else
+        {
+            Debug.DrawLine(rightCensor.position, leftCensor.forward * weapons.range, Color.red);
+            Debug.DrawLine(leftCensor.position, rightCensor.forward * weapons.range, Color.red);
+        }
+        
     }
 
 

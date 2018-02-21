@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(AITarget))]
 public class AISeek : MonoBehaviour {
-    public TurretAI ai;
+    TurretAI ai;
     bool turningRight = true;
     bool isDelaying;
 
