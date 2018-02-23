@@ -538,7 +538,7 @@ Transform:
   - {fileID: 633695907}
   - {fileID: 946024269}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565527069
 GameObject:
@@ -1363,7 +1363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 37.396, z: 0}
 >>>>>>> origin/TurretSeeking
 --- !u!1 &1159820210
@@ -1451,7 +1451,7 @@ Transform:
   m_Children:
   - {fileID: 1778819291}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1174205713
 GameObject:
@@ -1761,9 +1761,59 @@ Prefab:
 =======
   - {fileID: 1643527883}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/Main.unity
 >>>>>>> origin/TurretSeeking
+=======
+--- !u!1001 &1336550342
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.7034256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553851642150150, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465620188086584, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+      propertyPath: m_TagString
+      value: FuelPickUp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114722456512420396, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 5f3f3cc90a6f36a41a444a33d6196441, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> origin/PickUps:Lazer/Assets/Scenes/Main.unity
 --- !u!1 &1402033561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1898,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402033561}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD:Assets/Scenes/Main.unity
+=======
+--- !u!1 &1417613112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1417613115}
+  - component: {fileID: 1417613114}
+  - component: {fileID: 1417613113}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1417613113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417613112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1417613114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417613112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &1417613115
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417613112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> origin/PickUps:Lazer/Assets/Scenes/Main.unity
 --- !u!1 &1563786825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2571,11 @@ GameObject:
   - component: {fileID: 1835071808}
   - component: {fileID: 1835071809}
   - component: {fileID: 1835071810}
+<<<<<<< HEAD:Assets/Scenes/Main.unity
+=======
+  - component: {fileID: 1835071811}
+  - component: {fileID: 1835071812}
+>>>>>>> origin/PickUps:Lazer/Assets/Scenes/Main.unity
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2533,7 +2653,7 @@ Transform:
   m_Children:
   - {fileID: 1948290657}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1835071808
 MonoBehaviour:
@@ -2562,7 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de9893e5c16e7740b7caf8c2922a01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 2
   gravity: -9.8
 --- !u!114 &1835071810
 MonoBehaviour:
@@ -2572,6 +2692,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835071803}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Scenes/Main.unity
   m_Script: {fileID: 11500000, guid: 1521b8dce39e96c46a70ec288aac1981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -2608,6 +2729,38 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 =======
+=======
+  m_Script: {fileID: 11500000, guid: bb295581b1a077a4ea7eefd197e5fabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upForce: 11.5
+  fuel: 100
+--- !u!136 &1835071811
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835071803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1835071812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835071803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1233b2d175a9a04194534ad6ea5eedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuelPickUpAmount: 100
+>>>>>>> origin/PickUps:Lazer/Assets/Scenes/Main.unity
 --- !u!1 &1948290653
 GameObject:
   m_ObjectHideFlags: 0

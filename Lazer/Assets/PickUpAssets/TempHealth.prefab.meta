@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Lazer/Assets/Test.meta
+guid: bbc48c05c8439a74ebe2a960e2a1547a
+folderAsset: yes
+timeCreated: 1519400661
+=======
+guid: 4349ae2fb9966f940bbfbdf06cab9560
+timeCreated: 1518800349
+>>>>>>> origin/PickUps:Lazer/Assets/PickUpAssets/TempHealth.prefab.meta
+licenseType: Pro
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
