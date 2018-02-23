@@ -9,32 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-<<<<<<< HEAD
   m_RootGameObject: {fileID: 1441944203339830}
   m_IsPrefabParent: 1
 --- !u!1 &1441944203339830
-=======
-  m_RootGameObject: {fileID: 1135193888873896}
-  m_IsPrefabParent: 1
---- !u!1 &1135193888873896
->>>>>>> origin/Music
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 4910255717861404}
   - component: {fileID: 33778983202117510}
   - component: {fileID: 65363966798180454}
   - component: {fileID: 23801862345683904}
-=======
-  - component: {fileID: 4813202297685566}
-  - component: {fileID: 33256578408329630}
-  - component: {fileID: 65439002593341672}
-  - component: {fileID: 23661307583547272}
->>>>>>> origin/Music
   m_Layer: 0
   m_Name: Destructible Cube
   m_TagString: Destructible
@@ -42,43 +29,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!4 &4910255717861404
-=======
---- !u!4 &4813202297685566
->>>>>>> origin/Music
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1441944203339830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.74, y: 1.89, z: 5.47}
-=======
-  m_GameObject: {fileID: 1135193888873896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82, y: 1.8194585, z: 6.18}
->>>>>>> origin/Music
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!23 &23801862345683904
-=======
---- !u!23 &23661307583547272
->>>>>>> origin/Music
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1441944203339830}
-=======
-  m_GameObject: {fileID: 1135193888873896}
->>>>>>> origin/Music
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -107,33 +76,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD
 --- !u!33 &33778983202117510
-=======
---- !u!33 &33256578408329630
->>>>>>> origin/Music
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1441944203339830}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65363966798180454
-=======
-  m_GameObject: {fileID: 1135193888873896}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65439002593341672
->>>>>>> origin/Music
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1441944203339830}
-=======
-  m_GameObject: {fileID: 1135193888873896}
->>>>>>> origin/Music
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

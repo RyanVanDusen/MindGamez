@@ -72,9 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD
     - _Color: {r: 0.09558821, g: 0.09558821, b: 0.09558821, a: 1}
-=======
-    - _Color: {r: 0.38235295, g: 0.32724914, b: 0.24459344, a: 1}
->>>>>>> origin/Music
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

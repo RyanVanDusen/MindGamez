@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 0e0e7d562c6b648499216531a45d0420
 timeCreated: 1518802112
 licenseType: Pro
-=======
-guid: e9956f72b94f3ce45baaacd90bf3d0bc
-timeCreated: 1519345080
-licenseType: Free
->>>>>>> origin/Music
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 100100000

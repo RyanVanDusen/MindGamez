@@ -5,10 +5,7 @@ using UnityEngine;
   
 public class RaycastReflection : MonoBehaviour  
 {
-<<<<<<< HEAD
     #region Variables
-=======
->>>>>>> origin/Music
     private LineRenderer lineRenderer;
 
     private Ray ray;
@@ -23,7 +20,6 @@ public class RaycastReflection : MonoBehaviour
     //Points on the Line Renderer
     private int nPoints;
 
-<<<<<<< HEAD
     //Scripts
     PlayerHealth playerHealth;
 
@@ -37,24 +33,6 @@ public class RaycastReflection : MonoBehaviour
     void Awake ()  
     {
         lineRenderer = GetComponent<LineRenderer>();
-=======
-    //Volumetric Variables
-    private VolumetricLines.VolumetricMultiLineBehavior volumetricLines;
-    public Vector3 points;
-
-    //Scripts
-    PlayerHealth playerHealth;
-
-    //Burn Variables
-    [SerializeField] private float burnTime;
-    [SerializeField] private Material burnt;
-    private Renderer rend;
-  
-    void Awake ()  
-    {
-        lineRenderer = GetComponent<LineRenderer>();
-        volumetricLines = gameObject.GetComponent<VolumetricLines.VolumetricMultiLineBehavior>();
->>>>>>> origin/Music
     }  
   
     void Update ()  
@@ -79,11 +57,6 @@ public class RaycastReflection : MonoBehaviour
   
         for(int i=0;i<=nReflections;i++)
         {
-<<<<<<< HEAD
-=======
-            volumetricLines.UpdateLineVertices(volumetricLines.m_lineVertices);
-            volumetricLines.m_lineVertices[i] = lineRenderer.GetPosition(i);
->>>>>>> origin/Music
             //If the Ray has not been Reflected yet 
             if (i==0)  
             {  
@@ -140,27 +113,16 @@ public class RaycastReflection : MonoBehaviour
                     //Checks to see if the Laser hits the Player
                     if (hit.transform.CompareTag("Player"))
                     {
-<<<<<<< HEAD
                         hit.transform.gameObject.GetComponent<PlayerHealth>().TakeDamage();
-=======
-                        hit.transform.position = hit.transform.gameObject.GetComponent<PlayerHealth>().SpawnPoint.position;
-                        hit.transform.gameObject.GetComponent<PlayerHealth>().Health--;
-                        print("hit");
->>>>>>> origin/Music
                     }
 
                     if (hit.transform.gameObject.tag == "Destructible")
                     {
-<<<<<<< HEAD
-=======
-                        rend = hit.transform.gameObject.GetComponent<Renderer>();
->>>>>>> origin/Music
                         StartCoroutine(BurnObject(hit.transform.gameObject));
                     }
                 }
             }  
         }
-<<<<<<< HEAD
     }  
 
     IEnumerator BurnObject(GameObject go)
@@ -171,15 +133,4 @@ public class RaycastReflection : MonoBehaviour
         Destroy(go);
     }
     #endregion
-=======
-    }
-    
-    IEnumerator BurnObject(GameObject _burnObject)
-    {
-        yield return new WaitForSeconds(burnTime / 2);
-        rend.material = burnt;
-        yield return new WaitForSeconds(burnTime / 2);
-        Destroy(_burnObject);
-    }
->>>>>>> origin/Music
 }  
