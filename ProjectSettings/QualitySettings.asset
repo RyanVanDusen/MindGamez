@@ -148,12 +148,21 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Ultra
+<<<<<<< HEAD
     pixelLightCount: 4
     shadows: 2
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 4
     shadowDistance: 150
+=======
+    pixelLightCount: 16
+    shadows: 2
+    shadowResolution: 3
+    shadowProjection: 0
+    shadowCascades: 4
+    shadowDistance: 500
+>>>>>>> origin/Music
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -161,7 +170,11 @@ QualitySettings:
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
+<<<<<<< HEAD
     antiAliasing: 2
+=======
+    antiAliasing: 0
+>>>>>>> origin/Music
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1

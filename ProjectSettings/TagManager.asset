@@ -7,7 +7,10 @@ TagManager:
   - Ground
   - Reflector Cube
   - Destructible
+<<<<<<< HEAD
   - Wall
+=======
+>>>>>>> origin/Music
   layers:
   - Default
   - TransparentFX
