@@ -76,12 +76,12 @@ public class RaycastReflection : MonoBehaviour
                         ray = new Ray(hit.point, inDirection);
 
                         //Draw the normal - can only be seen at the Scene tab, for debugging purposes  
-                        Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
+                      //  Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
                         //represent the ray using a line that can only be viewed at the scene tab  
-                        Debug.DrawRay(hit.point, inDirection * 100, Color.magenta);
+                       // Debug.DrawRay(hit.point, inDirection * 100, Color.magenta);
 
                         //Print the name of the object the cast ray has hit, at the console  
-                        Debug.Log("Object name: " + hit.transform.name);
+                      //  Debug.Log("Object name: " + hit.transform.name);
 
                         //if the number of reflections is set to 1  
                         if (nReflections == 1)
