@@ -1,20 +1,31 @@
+<<<<<<< HEAD
 ﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
     #region Variables
+=======
+﻿using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+>>>>>>> origin/TurretSeeking
     [SerializeField]
     private float health;
 
     [SerializeField]
     private Transform spawnPoint;
 
+<<<<<<< HEAD
     [SerializeField]
     private bool canHurt;
     #endregion
 
     #region Accessors
+=======
+    //Accessors
+>>>>>>> origin/TurretSeeking
     public float Health
     {
         get
@@ -33,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         {
             return spawnPoint;
         }
+<<<<<<< HEAD
         set
         {
             spawnPoint = value;
@@ -49,6 +61,10 @@ public class PlayerHealth : MonoBehaviour
     #endregion
 
     #region Functions
+=======
+    }
+
+>>>>>>> origin/TurretSeeking
     private void Start()
     {
         //Sets the Player position to the Spawn Point at the start of the Game
@@ -64,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
             Application.Quit();
         }
     }
+<<<<<<< HEAD
 
     public void TakeDamage()
     {
@@ -82,4 +99,6 @@ public class PlayerHealth : MonoBehaviour
         canHurt = true;
     }
     #endregion
+=======
+>>>>>>> origin/TurretSeeking
 }
