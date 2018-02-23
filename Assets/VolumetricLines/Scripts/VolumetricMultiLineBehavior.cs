@@ -192,9 +192,9 @@ namespace VolumetricLines
 			{
 				int n = i;
 				var go = new GameObject("multiline" + n);
-				go.transform.SetParent(gameObject.transform);
-				go.transform.localPosition = Vector3.zero;
-				go.transform.localRotation = Quaternion.identity;
+				//go.transform.SetParent(gameObject.transform);
+				//go.transform.localPosition = Vector3.zero;
+				//go.transform.localRotation = Quaternion.identity;
 
 				var volLine = go.AddComponent<VolumetricLineBehavior>();
 				volLine.TemplateMaterial = TemplateMaterial;
@@ -273,18 +273,18 @@ namespace VolumetricLines
 			SetAllMaterialProperties();
 		}
 
-		void OnDrawGizmos()
-		{
-			Gizmos.color = Color.green;
-			if (null == m_lineVertices)
-			{
-				return;
-			}
-			for (int i=0; i < m_lineVertices.Length - 1; ++i)
-			{
-				Gizmos.DrawLine(gameObject.transform.TransformPoint(m_lineVertices[i]), gameObject.transform.TransformPoint(m_lineVertices[i+1]));
-			}
-		}
+		//void OnDrawGizmos()
+		//{
+		//	Gizmos.color = Color.green;
+		//	if (null == m_lineVertices)
+		//	{
+			//	return;
+			//}
+			//for (int i=0; i < m_lineVertices.Length - 1; ++i)
+			//{
+				//Gizmos.DrawLine(gameObject.transform.TransformPoint(m_lineVertices[i]), gameObject.transform.TransformPoint(m_lineVertices[i+1]));
+			//}
+		//}
 		#endregion
 	}
 }

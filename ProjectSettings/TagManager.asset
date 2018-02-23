@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Reflector Cube
-  - Destructible
   layers:
   - Default
   - TransparentFX
