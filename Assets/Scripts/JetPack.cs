@@ -41,8 +41,9 @@ public class JetPack : MonoBehaviour {
         {   
             this.transform.Translate(jetPack);
             fuel--;
-           
         }
-		
+		if (fuel < 100) {
+			fuel+=  20 * Time.deltaTime;
+		}
 	}
 }
