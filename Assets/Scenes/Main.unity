@@ -390,6 +390,16 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1835071807}
+    - target: {fileID: 114272388975129598, guid: ffe29d30a22e5b744a7a378c6c0e263b,
+        type: 2}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 45d5634e84874094da4b0f94f720c5b6, type: 3}
+    - target: {fileID: 114338071468697062, guid: ffe29d30a22e5b744a7a378c6c0e263b,
+        type: 2}
+      propertyPath: ac
+      value: 
+      objectReference: {fileID: 439681526}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffe29d30a22e5b744a7a378c6c0e263b, type: 2}
   m_IsPrefabParent: 0
@@ -542,6 +552,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.206001, y: -68.397, z: -12.608001}
+--- !u!114 &439681526 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114272388975129598, guid: ffe29d30a22e5b744a7a378c6c0e263b,
+    type: 2}
+  m_PrefabInternal: {fileID: 66492284}
+  m_Script: {fileID: 11500000, guid: f62485cde97d12d48aa1df07a3cfaf4c, type: 3}
 --- !u!1 &537073783
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class TurretShoot : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 	bool canFire = true;
+	[SerializeField]
+	AudioController ac;
     #endregion
 
     void Start ()
@@ -35,6 +37,8 @@ public class TurretShoot : MonoBehaviour
 
 	void Ray()
 	{
+		//playing the sound
+		ac.Play();
 		lastShot = Time.time + turretAI.weapons.fireRate;
 		float x = turretAI.weapons.accuracy;
 		Quaternion rot = Quaternion.Euler (turretBarrel.localRotation.x + Random.Range(-x,+x),
